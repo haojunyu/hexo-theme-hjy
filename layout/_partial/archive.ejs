@@ -1,0 +1,15 @@
+<% if(pagination == 2){ %>
+    <% //设置首页上每个文章的显示方式 %>
+    <% page.posts.each(function(post){ %>
+        <%- partial('article', {post: post, index: true}) %>
+    <% }) %>
+    <% //本页文章超过1篇时,添加分页 %>
+    <% if (page.total > 1){ %>
+        <nav id="page-nav">
+        <%- paginator({
+            prev_text: '&laquo; Prev',
+            next_text: 'Next &raquo;'
+        }) %>
+        </nav>
+    <% } %>
+<% } %>

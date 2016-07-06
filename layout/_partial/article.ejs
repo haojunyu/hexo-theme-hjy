@@ -1,0 +1,20 @@
+<% //首页中单个文章显示的样式 %>
+<article id="<%= post.layout %>-<%= post.slug %>">  <% //post.slug表示文件名,一般和文章名一致 %>
+    <% //文章标题 %>
+    <div id="article-inner">
+        <header id="article-header">
+            <%- partial('post/title', {class_name: 'article-title'}) %>
+        </header>
+        <div id="article-entry">
+            <% if (index && post.excerpt){ %>
+                <%- post.excerpt %>
+            <% } %>
+        </div>
+        <% if (index){ %>
+        <div id="article-info">
+            <%- partial('post/category') %>
+            <%- partial('post/tag') %>
+        </div>
+        <% } %>
+    </div>
+</article>
