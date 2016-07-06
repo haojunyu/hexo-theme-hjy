@@ -8,7 +8,7 @@
 //<%- partial('_partial/archive', {pagination: 2, index: true}) %>
 
 ## 构建
-
+过程
 
 ## 参考文献
 1. [从零开始定制hexo主题][2]
