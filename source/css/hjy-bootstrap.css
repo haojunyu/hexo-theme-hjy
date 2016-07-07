@@ -6687,6 +6687,31 @@ button.close {
 #topnav {
   border-top: 5px solid #333;
   border-bottom: 1px solid #e8e8e8;
+  min-height: 50px;
+}
+#navbar-search {
+  padding-top: 10px;
+  padding-right: 15px;
+}
+#content {
+  padding-top: 70px;
+}
+.left-col {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #ff945c;
+  opacity: 0.5;
+  transition: all 0.2s ease-in;
+}
+.mid-col {
+  position: absolute;
+  min-height: 100%;
+  left: 300px;
+  right: 0;
+  width: auto;
+  overflow: hidden;
 }
 .clearfix:before,
 .clearfix:after,
