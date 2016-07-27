@@ -1,68 +1,69 @@
-<div class="overlay"></div>
-<div class="intrude-less">
+<div class="introduce">
     <header id="header" class="inner">
-        <a href="<%= config.root %>" class="profilepic">
-            <img src="<%- theme.root_url %><%=theme.avatar%>" class="animated zoomIn">
+        <!-- 头像 -->
+        <a href="<%= config.root %>" >
+            <img src="<%- url_for(theme.avatar) %>" class="avatar">
         </a>
-        <hgroup>
-          <h1 class="header-author"><a href="<%= config.root %>"><%=theme.author%></a></h1>
-        </hgroup>
+        <h2><a href="<%= config.root %>"><%=theme.author%></a></h2>
 
         <% if (theme.subtitle){ %>
         <p class="header-subtitle"><%=theme.subtitle%></p>
         <%}%>
 
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state"><%= site.posts.length %></span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state"><%= site.categories.length %></span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
 
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            <% for (var i in theme.subnav){ %>
+            <li>
+                <a href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-<%= i %> fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            <%}%>
+        </ul>
 
-
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        <% for (var i in theme.menu){ %>
-                            <li><a href="<%- theme.root_url %><%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-                        <%}%>
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            <% for (var i in theme.subnav){ %>
-                                <a class="fa <%= i %>" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"></a>
-                            <%}%>
-                        </ul>
-                    </nav>
-                </section>
-
-                <%if(theme.tagcloud){%>
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <%- list_tags({show_count: false}) %>
-                    </div>
-                </section>
-                <%}%>
-
-                <%if(theme.friends && theme.friends.length != 0){%>
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    <% for (var i in theme.friends){ %>
-                      <a class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
-                    <% } %>
-                    </div>
-                </section>
-                <%}%>
-
-                <%if(theme.aboutme){%>
-                <%if(!theme.friends){%>
-                <section class="switch-part switch-part3">
-                <%}else{%>
-                <section class="switch-part switch-part4">
-                <%}%>
-                    <div id="js-aboutme"><%=theme.aboutme%></div>
-                </section>
-                <%}%>
+        <hr>
+        <!-- 研究涉及领域 -->
+        <% if (is_home()){%>
+        <section>
+            <div class="tags">
+                <% site.tags.map(function(tag){  %>
+                <% if(tag.length >= theme['featured-condition-size']) { %>
+                <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>">
+                    <span class="tag"><%= tag.name %></span>
+                </a>
+                <% } %>
+                <% }) %>
             </div>
-        </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <p class="header-subtitle">本站访客数：110 人次</p>
+        <p class="header-subtitle">本站访问量：1102 次</p>
+        <%}else{%>
+            显示目录
+        <%}%>
+
     </header>
 </div>
