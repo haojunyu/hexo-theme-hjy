@@ -24,9 +24,12 @@ root_url:
 # Link to your avatar | 填写头像地址
 avatar: /img/avatar.png
 
+# Year of Site Creation | 网站成立年份
+since: 2013
+
 subnav:
   envelope: "mailto:haojunyu2012@gmail.com"
-  Weibo: "sina weibo"
+  Weibo: "http://weibo.com/u/5377255259"
   GitHub: "https://github.com/haojunyu"
   #V2EX: "#"
   #RSS: "/atom.xml"
@@ -58,7 +61,7 @@ subnav:
 
 # >>> Advantage Setup | 高级设置 <<<
 # Featured Tags
-featured-condition-size: 1     # 体现对该标签的熟悉程度
+featured-condition-size: 5     # 体现对该标签的熟悉程度
 
 
 # >>> config
@@ -67,7 +70,8 @@ CDN:
   jquery: //cdn.bootcss.com/jquery/2.2.4/jquery.min.js
   bootstrap_css: //cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css
   bootstrap_js: //cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js
-  bootstrap_theme: //cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+  bootstrap_theme: //cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css
+  busuanzi_js: https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js
   require: //cdn.bootcss.com/require.js/2.2.0/require.min.js
   fontawesome: //cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css
   fancybox_js: //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js

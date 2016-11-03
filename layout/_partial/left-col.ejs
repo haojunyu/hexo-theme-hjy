@@ -59,8 +59,17 @@
         </section>
 
         <!-- 网站访问 -->
-        <p class="header-subtitle">本站访客数：110 人次</p>
-        <p class="header-subtitle">本站访问量：1102 次</p>
+
+        <div class="header-visit">
+            <span id="busuanzi_container_site_uv">
+                访客数: <span id="busuanzi_value_site_uv"></span>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </span><br/>
+            <span id="busuanzi_container_site_pv">
+                访问量：<span id="busuanzi_value_site_pv"></span>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+            </span>
+        </div>
         <%}else{%>
             显示目录
         <%}%>
