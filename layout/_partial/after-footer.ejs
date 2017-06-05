@@ -2,3 +2,24 @@
 <script src="<%- theme.CDN.jquery %>"></script>
 <script src="<%- theme.CDN.bootstrap_js %>"></script>
 <script async src="<%- theme.CDN.busuanzi_js %>"></script>
+<script data-main="<%-config.root%>js/main.js" src="<%- theme.CDN.require %>"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="<%- theme.CDN.mathjax %>?config=TeX-AMS-MML_HTMLorMML">
+</script>

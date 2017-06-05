@@ -1,4 +1,7 @@
-<% if(pagination == 2){ %>
+<div class="row">
+  <!--主要内容显示-->
+  <div class="col-md-9" role="contents">
+    <!-- <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %> -->
     <% //设置首页上每个文章的显示方式 %>
     <% page.posts.each(function(post){ %>
         <%- partial('article', {post: post, index: true}) %>
@@ -12,8 +15,14 @@
         }) %>
         </nav>
     <% } %>
-<% } %>
-<% //文档归档的显示方式 %> 
 
+    <% //文档归档的显示方式 %>
+  </div>
 
-<% //读书中的显示方式 %>
+  <!--博客信息侧边栏-->
+  <div class="col-md-3" role="complementary">
+    <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+      <%- partial('_partial/site-col', null, {cache: !config.relative_link}) %>
+    </div>
+  </div>
+</div>
